@@ -231,7 +231,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            background: #25D366;
+            background: var(--accent-copper);
             color: white;
             padding: 14px 28px;
             border-radius: 50px;
@@ -887,9 +887,10 @@
             justify-content: center;
             width: 55px;
             height: 55px;
-            background: #25D366;
+            background: var(--accent-copper);
+            color: white;
             border-radius: 50%;
-            box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 5px 25px rgba(184, 123, 94, 0.4);
             transition: transform 0.3s ease;
             animation: float-pulse 2s infinite;
         }
@@ -905,16 +906,16 @@
 
             0%,
             100% {
-                box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
+                box-shadow: 0 5px 25px rgba(184, 123, 94, 0.4);
             }
 
             50% {
-                box-shadow: 0 5px 25px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+                box-shadow: 0 5px 25px rgba(184, 123, 94, 0.6), 0 0 0 10px rgba(184, 123, 94, 0.1);
             }
         }
 
         .float-btn a:hover {
-            transform: scale(1.1);
+            transform: translateY(-3px);
         }
 
         .float-btn svg {
@@ -1002,24 +1003,24 @@
             SOPHIA
             <span>BRUTOS</span>
         </div>
-        <a href="https://wa.link/1nxmx6" class="header-cta">Fale
-            Conosco</a>
+        <a href="https://wa.link/1nxmx6" class="header-cta">Catálogo Atacado</a>
     </header>
 
     <!-- Hero -->
     <section class="hero">
         <div class="hero-left">
-            <p class="hero-tag">Direto da fábrica • Limeira/SP</p>
-            <h1 class="hero-title">Semijoias<br>no <em>Bruto</em></h1>
+            <p class="hero-tag">FABRICAÇÃO PRÓPRIA • LIMEIRA/SP</p>
+            <h1 class="hero-title">Sua Marca, Sua Margem: Semijoias no <em>Bruto</em></h1>
             <p class="hero-subtitle">
-                Mais margem de lucro, mais liberdade de escolha.
-                Você define o acabamento, nós garantimos a qualidade.
+                Elimine o revendedor. Compre peças com qualidade de exportação (latão e alta fusão) e faça seu próprio
+                acabamento. <strong>Lucro real para quem tem visão de negócio.</strong>
             </p>
             <a href="https://wa.link/1nxmx6" class="cta-btn">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path
                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
+                Solicitar Catálogo e Tabela
             </a>
         </div>
 
@@ -1031,23 +1032,23 @@
     <!-- Comparison Section -->
     <section class="comparison">
         <div class="section-header">
-            <p class="section-tag">ENTENDA A DIFERENÇA</p>
-            <h2 class="section-title">Bruto vs <em>Folheado</em></h2>
+            <p class="section-tag">POSICIONAMENTO ESTRATÉGICO</p>
+            <h2 class="section-title">Por que migrar para o <em>Bruto</em>?</h2>
         </div>
 
         <div class="comparison-cards">
             <div class="comp-card standard">
                 <img src="assets/img/85c3824ddddba2b292de52147565a36d.webp" class="comp-card-image" alt="Peça folheada">
-                <h3>Folheado</h3>
-                <p>Peça pronta com banho já aplicado. <strong>Margem limitada</strong> e sem flexibilidade de
-                    escolha.</p>
+                <h3>Revenda Tradicional</h3>
+                <p>Você compete por preço. Margem espremida pelo fornecedor. Peças que todo mundo tem e você não
+                    consegue se diferenciar.</p>
             </div>
 
             <div class="comp-card featured">
                 <img src="assets/img/d75717a73a22ff8f9322180dd9c70005.webp" class="comp-card-image" alt="Peça no bruto">
-                <h3>Bruto</h3>
-                <p>Peça antes do banho. <strong>Você escolhe o acabamento</strong>. Margem até <strong>3x
-                        maior</strong>.</p>
+                <h3>Sua Marca Exclusiva</h3>
+                <p>Você define o banho e o preço final. <strong>Margem até 300% maior</strong>. Controle total da
+                    qualidade e coleções únicas.</p>
             </div>
         </div>
     </section>
@@ -1055,37 +1056,37 @@
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="section-header">
-            <p class="section-tag">VANTAGENS EXCLUSIVAS</p>
-            <h2 class="section-title">Por que comprar <em>No Bruto</em>?</h2>
+            <p class="section-tag">DIFERENCIAIS DE FÁBRICA</p>
+            <h2 class="section-title">O que entregamos para sua <em>Marca</em></h2>
         </div>
 
         <div class="benefits-grid">
             <div class="benefit">
                 <img src="assets/img/f763115cf307fc48b23726bbd4c64a3f.webp" class="benefit-image" alt="Banho">
                 <div class="benefit-number">01</div>
-                <h4>Escolha o Banho</h4>
-                <p>Você decide a qualidade e o acabamento (ouro, prata, ródio) ideal para seu público.</p>
+                <h4>Qualidade de Joia</h4>
+                <p>Latão premium e micro zircônia. Peças limpas e preparadas para receber o melhor banho.</p>
             </div>
 
             <div class="benefit">
                 <img src="assets/img/c13bd54b0e2c39a89fbbc48c28ca045e.webp" class="benefit-image" alt="Lucro">
                 <div class="benefit-number">02</div>
-                <h4>Margem 3x Maior</h4>
-                <p>Pague muito menos na base e aumente significativamente sua lucratividade.</p>
+                <h4>Margem Real</h4>
+                <p>Pague o preço de custo da indústria. Aumente seu markup sem perder competitividade.</p>
             </div>
 
             <div class="benefit">
                 <img src="assets/img/20229fcfd470c3bd8b264a63c475eb63.webp" class="benefit-image" alt="Coleção">
                 <div class="benefit-number">03</div>
-                <h4>Liberdade Total</h4>
-                <p>Crie coleções exclusivas sem depender do estoque pronto de revendedores.</p>
+                <h4>Reposição Garantida</h4>
+                <p>Molde próprio. Não sofra com peças "modinha" que somem do mercado quando você mais vende.</p>
             </div>
 
             <div class="benefit">
                 <img src="assets/img/751c881d0076c261823df4af4ec7467f.webp" class="benefit-image" alt="Qualidade">
                 <div class="benefit-number">04</div>
-                <h4>Qualidade de Fábrica</h4>
-                <p>Peças leves, com acabamento premium e alta durabilidade.</p>
+                <h4>Comece Pequeno</h4>
+                <p>Pedido mínimo de apenas 15 peças. Ideal para quem quer testar e validar sem alto investimento.</p>
             </div>
         </div>
     </section>
@@ -1093,8 +1094,8 @@
     <!-- Video Section -->
     <section class="video-section">
         <div class="section-header">
-            <p class="section-tag">NOSSA PRODUÇÃO</p>
-            <h2 class="section-title">Veja como <em>Fabricamos</em></h2>
+            <p class="section-tag">BASTIDORES</p>
+            <h2 class="section-title">Do design à fundição: <em>Padrão Sophia</em></h2>
         </div>
 
         <div class="video-container">
@@ -1105,7 +1106,7 @@
                     <circle cx="12" cy="12" r="10"></circle>
                     <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
                 </svg>
-                <p>Assistir Vídeo Institucional</p>
+                <p>Ver Produção em Limeira</p>
             </div>
         </div>
     </section>
@@ -1114,9 +1115,9 @@
     <section class="credibility">
         <div class="cred-content">
             <div class="cred-text">
-                <h2>Indústria Própria em <em>Limeira</em></h2>
-                <p>Estamos localizados na capital das semijoias, oferecendo o melhor em latão, alta fusão e micro
-                    zircônia.</p>
+                <h2>Segurança de quem <em>Produz</em></h2>
+                <p>Estamos na capital das semijoias. Diferente de revendedores, temos estrutura física, estoque real e
+                    CNPJ idôneo.</p>
 
                 <ul class="cred-list">
                     <li>
@@ -1126,7 +1127,7 @@
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
                         </div>
-                        Produção 100% interna
+                        Fábrica + 2 Lojas Físicas
                     </li>
                     <li>
                         <div class="cred-list-icon">
@@ -1136,7 +1137,7 @@
                                 </path>
                             </svg>
                         </div>
-                        Envio para todo o Brasil
+                        Envio Seguro com Nota Fiscal
                     </li>
                 </ul>
             </div>
@@ -1151,7 +1152,7 @@
                         </svg>
                     </div>
                     <h4>100%</h4>
-                    <p>Produção Própria</p>
+                    <p>Fabricação Própria</p>
                 </div>
 
                 <div class="cred-stat">
@@ -1188,8 +1189,30 @@
                         </svg>
                     </div>
                     <h4>BR</h4>
-                    <p>Atendemos Todo País</p>
+                    <p>Envio Nacional</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" style="background: var(--bg-cream);">
+        <div class="section-header">
+            <h2 class="section-title">Dúvidas <em>Frequentes</em></h2>
+        </div>
+        <div class="benefits-grid" style="grid-template-columns: 1fr; max-width: 800px; gap: 15px;">
+            <div class="benefit" style="text-align: left; padding: 25px;">
+                <h4 style="margin-bottom: 5px; color: var(--accent-copper);">Qual o pedido mínimo?</h4>
+                <p>Apenas 15 peças no total, podendo variar os modelos (mínimo de 5 por modelo). Ideal para testar.</p>
+            </div>
+            <div class="benefit" style="text-align: left; padding: 25px;">
+                <h4 style="margin-bottom: 5px; color: var(--accent-copper);">Vocês indicam onde dar o banho?</h4>
+                <p>Sim! Temos parceiros de galvanoplastia de confiança em Limeira para indicar se você estiver
+                    começando.</p>
+            </div>
+            <div class="benefit" style="text-align: left; padding: 25px;">
+                <h4 style="margin-bottom: 5px; color: var(--accent-copper);">Pessoa Física pode comprar?</h4>
+                <p>Sim, atendemos tanto CPF quanto CNPJ com a mesma tabela de atacado.</p>
             </div>
         </div>
     </section>
@@ -1197,13 +1220,13 @@
     <!-- Final CTA -->
     <section class="final-cta">
         <div class="section-header">
-            <h2 class="section-title">Pronto para aumentar sua <em>Lucratividade</em>?</h2>
+            <h2 class="section-title">Leve sua marca para o <em>Próximo Nível</em></h2>
         </div>
-        <p>Fale agora com nossa equipe e receba o catálogo completo.</p>
+        <p>Receba nosso catálogo completo e comece a lucrar mais com o bruto.</p>
 
         <div class="offer-pills">
             <span class="pill">✓ Pedido Mínimo: 15 peças</span>
-            <span class="pill">✓ Envio Imediato</span>
+            <span class="pill">✓ Envio Rápido</span>
             <span class="pill">✓ Atacado para CPF/CNPJ</span>
         </div>
 
@@ -1212,7 +1235,7 @@
                 <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
             </svg>
-            Falar com Consultor
+            Solicitar Tabela e Fotos
         </a>
     </section>
 
@@ -1227,7 +1250,7 @@
         <a href="https://wa.link/1nxmx6" target="_blank">
             <svg viewBox="0 0 24 24" fill="currentColor">
                 <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
             </svg>
         </a>
     </div>

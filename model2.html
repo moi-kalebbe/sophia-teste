@@ -20,6 +20,7 @@
             --gold-light: #E8D5B5;
             --rose: #D4A5A5;
             --white: #FFFFFF;
+            --accent-copper: #B87B5E;
         }
 
         * {
@@ -157,7 +158,7 @@
             display: inline-flex;
             align-items: center;
             gap: 14px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            background: var(--accent-copper);
             color: white;
             padding: 18px 40px;
             border-radius: 60px;
@@ -166,7 +167,7 @@
             font-size: 1rem;
             letter-spacing: 0.02em;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.2);
+            box-shadow: 0 15px 50px rgba(184, 123, 94, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -650,9 +651,9 @@
             justify-content: center;
             width: 65px;
             height: 65px;
-            background: #25D366;
+            background: var(--accent-copper);
             border-radius: 50%;
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 8px 30px rgba(184, 123, 94, 0.4);
             transition: all 0.3s ease;
             animation: pulse-ring 2.5s infinite;
         }
@@ -693,46 +694,49 @@
             </div>
 
             <div class="hero-content">
-                <span class="hero-badge">Indústria própria • Limeira/SP</span>
+                <span class="hero-badge">Indústria de Semijoias no Bruto • Limeira/SP</span>
 
-                <h1>Semijoias no <strong class="highlight">Bruto</strong><br>Direto da Fábrica</h1>
+                <h1>Mais margem. Mais lucro.<br><strong class="highlight">Sua Marca Própria.</strong></h1>
 
                 <p class="hero-desc">
-                    Mais margem de lucro. Mais liberdade de escolha.
-                    Você decide o acabamento, nós garantimos a qualidade.
+                    Fabricamos semijoias no bruto (latão e alta fusão) para quem quer eliminar o revendedor.
+                    Qualidade de exportação e reposição garantida para o seu negócio escalar.
                 </p>
 
-                <a href="https://wa.link/1nxmx6"
-                    class="cta-primary">
+                <a href="https://wa.link/1nxmx6" class="cta-primary">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                     </svg>
-                    Falar com Consultor
+                    Quero Catálogo + Tabela do Bruto
                 </a>
+
+                <div style="margin-top: 20px; font-size: 0.85rem; color: var(--text-muted); opacity: 0.8;">
+                    Pedido mínimo 15 peças • CPF/CNPJ • Envio BR • Indicação de banho
+                </div>
             </div>
         </section>
 
         <section class="difference">
             <div class="container">
                 <div class="diff-header">
-                    <span>Entenda a diferença</span>
-                    <h2>Bruto vs Folheado</h2>
+                    <span>Posicionamento de Mercado</span>
+                    <h2>Diferença no seu <em>Bolso</em></h2>
                 </div>
 
                 <div class="diff-grid">
                     <div class="diff-card folheado">
-                        <h3>Folheado</h3>
-                        <p>Peça pronta com banho já aplicado.<br><br><strong>Margem limitada</strong> — você depende do
-                            preço de mercado e não tem flexibilidade de personalização.</p>
+                        <h3>Revenda Comum</h3>
+                        <p>Peça pronta com preço tabelado.<br><br><strong>Margem "espremida"</strong> — você compete com
+                            todo mundo e sua marca vira apenas mais uma vendedora.</p>
                     </div>
 
                     <div class="diff-vs">vs</div>
 
                     <div class="diff-card bruto">
-                        <h3>Bruto</h3>
-                        <p>Peça antes do banho. <strong>Você escolhe o acabamento</strong> — ouro, prata,
-                            ródio.<br><br>Margem até <strong>3x maior</strong> e liberdade total para sua coleção.</p>
+                        <h3>Marca Própria</h3>
+                        <p>Você compra na fonte (indústria). <strong>Você define o preço final</strong>.<br><br>Margem
+                            até <strong>300% maior</strong>, coleção única e fidelização real do cliente.</p>
                     </div>
                 </div>
             </div>
@@ -741,52 +745,51 @@
         <section class="benefits">
             <div class="container">
                 <div class="benefits-header">
-                    <span>Vantagens</span>
-                    <h2>Por que comprar no bruto?</h2>
+                    <span>Diferenciais Estratégicos</span>
+                    <h2>Indústria, não "dondoca"</h2>
                 </div>
 
                 <div class="benefits-list">
                     <div class="benefit-item">
                         <div class="benefit-image-wrapper">
-                            <img src="assets/img/f763115cf307fc48b23726bbd4c64a3f.webp"
-                                alt="Escolha de banho de semijoias">
+                            <img src="assets/img/c13bd54b0e2c39a89fbbc48c28ca045e.webp" alt="Lucro real semijoias">
                         </div>
                         <div class="benefit-text">
-                            <h4>Escolha o banho</h4>
-                            <p>Ouro, prata, ródio — você decide a qualidade e o acabamento ideal para seus clientes.</p>
+                            <h4>Margem de Verdade</h4>
+                            <p>Chega de brigar por centavos. Comprando na fábrica, seu markup paga seus custos e deixa
+                                lucro real.</p>
                         </div>
                     </div>
 
                     <div class="benefit-item">
                         <div class="benefit-image-wrapper">
-                            <img src="assets/img/c13bd54b0e2c39a89fbbc48c28ca045e.webp"
-                                alt="Moedas de ouro empilhadas representando lucro">
+                            <img src="assets/img/f763115cf307fc48b23726bbd4c64a3f.webp" alt="Banho personalizado">
                         </div>
                         <div class="benefit-text">
-                            <h4>Margem até 3x maior</h4>
-                            <p>Pague menos na base e venda pelo mesmo preço do mercado. Lucro real.</p>
+                            <h4>Sua Coleção, Seu Padrão</h4>
+                            <p>Você decide se quer 3, 5 ou 10 milésimos. Crie peças com a durabilidade que seu público
+                                exige.</p>
                         </div>
                     </div>
 
                     <div class="benefit-item">
                         <div class="benefit-image-wrapper">
-                            <img src="assets/img/20229fcfd470c3bd8b264a63c475eb63.webp"
-                                alt="Variedade de peças de semijoias e correntes">
+                            <img src="assets/img/20229fcfd470c3bd8b264a63c475eb63.webp" alt="Estoque garantido">
                         </div>
                         <div class="benefit-text">
-                            <h4>Liberdade total</h4>
-                            <p>Monte sua coleção exclusiva sem depender de estoque pronto de terceiros.</p>
+                            <h4>Reposição Garantida</h4>
+                            <p>Temos moldes próprios. A peça que vendeu bem hoje não vai sumir do catálogo amanhã.</p>
                         </div>
                     </div>
 
                     <div class="benefit-item">
                         <div class="benefit-image-wrapper">
-                            <img src="assets/img/751c881d0076c261823df4af4ec7467f.webp"
-                                alt="Anel de alta qualidade com brilho">
+                            <img src="assets/img/751c881d0076c261823df4af4ec7467f.webp" alt="Qualidade técnica">
                         </div>
                         <div class="benefit-text">
-                            <h4>Qualidade de fábrica</h4>
-                            <p>Peças leves, bem acabadas e vendáveis o ano todo. Modelos atemporais.</p>
+                            <h4>Qualidade Técnica</h4>
+                            <p>Latão premium e micro zircônia. Peças limpas, leves e preparadas para receber o melhor
+                                banho.</p>
                         </div>
                     </div>
                 </div>
@@ -796,13 +799,13 @@
         <section class="video-section">
             <div class="container">
                 <div class="video-header">
-                    <span>Nossa produção</span>
-                    <h2>Veja como fabricamos</h2>
+                    <span>Linha de Produção</span>
+                    <h2>Bastidores da Fábrica</h2>
                 </div>
 
                 <div class="video-wrapper">
-                    <img src="assets/img/54fcbf9bffe22d87e1b67b4a19123462.webp"
-                        alt="Vídeo da produção Sophia Brutos" class="video-thumbnail">
+                    <img src="assets/img/54fcbf9bffe22d87e1b67b4a19123462.webp" alt="Fábrica Sophia Brutos Limeira"
+                        class="video-thumbnail">
                 </div>
             </div>
         </section>
@@ -813,69 +816,95 @@
                     <div class="cred-item">
                         <div class="cred-image">
                             <img src="assets/img/3618429917084b11d485d73ac22e9f3b.webp"
-                                alt="Interior de fábrica e máquinas">
+                                alt="Fábrica própria de semijoias">
                         </div>
                         <div class="cred-content">
                             <h3>100%</h3>
-                            <p>Produção própria</p>
+                            <p>Fabricação Própria</p>
                         </div>
                     </div>
 
                     <div class="cred-item">
                         <div class="cred-image">
                             <img src="assets/img/2c693b4993e5f51885f5cd3c316c2af5.webp"
-                                alt="Fachada ou interior da loja Sophia Brutos">
+                                alt="Lojas físicas Sophia Brutos">
                         </div>
                         <div class="cred-content">
-                            <h3>2</h3>
-                            <p>Lojas em Limeira</p>
+                            <h3>02</h3>
+                            <p>Lojas Físicas</p>
                         </div>
                     </div>
 
                     <div class="cred-item">
                         <div class="cred-image">
-                            <img src="assets/img/b6639f4453d69d45e777474b70c2cfc0.webp"
-                                alt="Caixa aberta com brincos">
+                            <img src="assets/img/b6639f4453d69d45e777474b70c2cfc0.webp" alt="Pedido mínimo acessível">
                         </div>
                         <div class="cred-content">
                             <h3>15</h3>
-                            <p>Pedido mínimo</p>
+                            <p>Peças de Mínimo</p>
                         </div>
                     </div>
 
                     <div class="cred-item">
                         <div class="cred-image">
-                            <img src="assets/img/d774b502e548b5a6fab41af276698e70.webp"
-                                alt="Mapa do Brasil">
+                            <img src="assets/img/d774b502e548b5a6fab41af276698e70.webp" alt="Envio para todo Brasil">
                         </div>
                         <div class="cred-content">
                             <h3>BR</h3>
-                            <p>Todo o país</p>
+                            <p>Envio Nacional</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="cred-text">
-                    <h2>Indústria própria em Limeira</h2>
-                    <p>A capital das semijoias no Brasil. Latão, alta fusão e micro zircônia de primeira linha.</p>
+                    <h2>Segurança de quem tem endereço fixo</h2>
+                    <p>Estamos na Capital da Semijoia (Limeira/SP). Visite nossas lojas no Shopping Boulevard ou na Av.
+                        Costa e Silva.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq" style="background: var(--bg-dark); padding-top: 50px; padding-bottom: 50px;">
+            <div class="container" style="max-width: 800px;">
+                <div class="benefits-header" style="margin-bottom: 40px;">
+                    <h2>Perguntas Frequentes</h2>
+                </div>
+
+                <div style="display: grid; gap: 20px;">
+                    <div style="background: rgba(255,255,255,0.03); border-radius: 15px; padding: 20px;">
+                        <h4 style="color: var(--gold); margin-bottom: 10px;">Qual o pedido mínimo?</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Apenas 15 peças no total (mínimo de 5
+                            por modelo). Ideal para testar a qualidade.</p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.03); border-radius: 15px; padding: 20px;">
+                        <h4 style="color: var(--gold); margin-bottom: 10px;">Vocês indicam o banho?</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Sim! Indicamos parceiros de
+                            galvanoplastia de confiança em Limeira para quem está começando.</p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.03); border-radius: 15px; padding: 20px;">
+                        <h4 style="color: var(--gold); margin-bottom: 10px;">Precisa de CNPJ?</h4>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">Não. Atendemos CPF e CNPJ com a mesma
+                            tabela de atacado.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="final-cta">
             <div class="final-content">
-                <h2>Pronto para aumentar<br>sua <span class="highlight">margem</span>?</h2>
-                <p>Converse com nossa equipe e descubra como trabalhar com o bruto.</p>
+                <h2>Leve sua marca para o<br><span class="highlight">Próximo Nível</span></h2>
+                <p>Receba nosso catálogo completo e comece a lucrar mais com o bruto.</p>
 
                 <div class="offer-tags">
                     <span class="tag">✓ Pedido mínimo: 15 peças</span>
-                    <span class="tag">✓ Envio todo Brasil</span>
-                    <span class="tag">✓ CPF e CNPJ</span>
-                    <span class="tag">✓ Catálogo atualizado</span>
+                    <span class="tag">✓ Envio Imediato</span>
+                    <span class="tag">✓ Atacado para CPF/CNPJ</span>
+                    <span class="tag">✓ Indicação de Banho</span>
                 </div>
 
-                <a href="https://wa.link/1nxmx6"
-                    class="cta-primary">
+                <a href="https://wa.link/1nxmx6" class="cta-primary">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />

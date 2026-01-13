@@ -19,6 +19,7 @@
             --accent-gold: #C9A86C;
             --accent-rose: #D4A5A5;
             --white: #ffffff;
+            --gradient-gold: linear-gradient(135deg, #C9A86C 0%, #B08D55 100%);
         }
 
         * {
@@ -135,21 +136,22 @@
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            background: var(--gradient-gold);
             color: white;
             padding: 18px 40px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1rem;
             letter-spacing: 0.05em;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 10px 40px rgba(201, 168, 108, 0.3);
+            text-transform: uppercase;
         }
 
         .cta-button:hover {
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 15px 50px rgba(201, 168, 108, 0.4);
         }
 
         .cta-button svg {
@@ -516,23 +518,60 @@
             text-align: center;
         }
 
-        /* Final CTA Section */
+        /* Final CTA Section Creative */
         .final-cta {
-            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+            background: #111;
+            /* Fallback text color */
+            color: var(--white);
             text-align: center;
-            padding: 100px 20px;
+            padding: 120px 20px;
+            overflow: hidden;
+        }
+
+        .final-cta-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/img/craftsman_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(100%) brightness(0.3);
+            z-index: 0;
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 1;
         }
 
         .final-cta h2 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(2.5rem, 6vw, 4rem);
             margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .tagline-creative {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 10px;
+            display: block;
         }
 
         .final-cta p {
-            color: var(--text-medium);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 40px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+        }
+
+        .final-cta .decoration-line {
+            background: var(--accent-gold);
         }
 
         .offer-badges {
@@ -649,6 +688,194 @@
             height: 30px;
             stroke: var(--accent-gold);
         }
+
+        /* Ideal / Not Ideal Section */
+        .ideal-section {
+            background: var(--bg-primary);
+        }
+
+        .ideal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .ideal-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .ideal-card {
+            padding: 30px;
+            border-radius: 20px;
+            background: var(--white);
+        }
+
+        .ideal-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ideal-card ul {
+            list-style: none;
+        }
+
+        .ideal-card li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            color: var(--text-medium);
+        }
+
+        .ideal-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 18px;
+            height: 18px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .ideal-card.yes h3 {
+            color: #2e7d32;
+        }
+
+        .ideal-card.yes li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232e7d32' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+
+        .ideal-card.no h3 {
+            color: #c62828;
+        }
+
+        .ideal-card.no li::before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c62828' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: var(--bg-secondary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            color: var(--bg-secondary);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text-medium);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+            border-top: 1px solid var(--bg-secondary);
+            padding-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--bg-secondary);
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 20px;
+            background: none;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            color: var(--text-medium);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding-bottom: 20px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 
@@ -666,23 +893,30 @@
 
             <div class="decoration-line"></div>
 
-            <h1>Semijoias no Bruto<br>Direto da Fábrica
-                <span>Mais margem • Mais liberdade • Mais lucro</span>
+            <h1>Semijoias no Bruto • Indústria em Limeira
+                <span>Margem de lucro real para lojistas</span>
             </h1>
 
             <p class="hero-subtitle">
-                Peças de qualidade para lojistas que buscam alta lucratividade.
-                Você escolhe o banho, nós garantimos a qualidade.
+                Produção própria. Você escolhe o banho, nós garantimos a reposição.
+                Peças atemporais direto da fonte.
             </p>
 
-            <a href="https://wa.link/1nxmx6"
-                class="cta-button">
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 30px; font-size: 0.9rem; font-weight: 500; color:var(--text-dark);">
+                <span style="display: flex; align-items: center; gap: 5px;">✓ Pedido Mínimo 15 Peças</span>
+                <span style="display: flex; align-items: center; gap: 5px;">✓ Envio todo BR</span>
+                <span style="display: flex; align-items: center; gap: 5px;">✓ CPF e CNPJ</span>
+            </div>
+
+            <a href="https://wa.link/1nxmx6" class="cta-button">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path
                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                Falar com Consultor
+                QUERO CATÁLOGO + TABELA DO BRUTO
             </a>
+            <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.8;">Resposta rápida no WhatsApp</p>
         </div>
 
         <div class="scroll-indicator">
@@ -695,23 +929,55 @@
     <section class="difference">
         <div class="container">
             <div class="decoration-line"></div>
-            <h2 class="section-title">Você sabe a diferença?</h2>
+            <h2 class="section-title">Bruto vs Folheado: onde seu lucro nasce</h2>
 
             <div class="comparison">
                 <div class="comparison-card folheado">
-                    <img src="assets/img/85c3824ddddba2b292de52147565a36d.webp"
-                        alt="Semijoia folheada" class="comparison-card-image">
-                    <h3>Folheado</h3>
-                    <p>Peça pronta com banho já aplicado.<br><strong>Margem limitada.</strong><br>Sem flexibilidade de
-                        escolha.</p>
+                    <img src="assets/img/85c3824ddddba2b292de52147565a36d.webp" alt="Semijoia folheada"
+                        class="comparison-card-image">
+                    <h3>Revenda de Folheado</h3>
+                    <p>Você compra pronto e briga por preço.<br>
+                        <strong>Margem apertada.</strong><br>
+                        Concorrentes vendem a mesma peça.
+                    </p>
                 </div>
 
                 <div class="comparison-card bruto">
-                    <img src="assets/img/d75717a73a22ff8f9322180dd9c70005.webp"
-                        alt="Semijoia no bruto" class="comparison-card-image">
-                    <h3>Bruto</h3>
-                    <p>Peça antes do banho — você escolhe o acabamento.<br><strong>Margem até 3x
-                            maior.</strong><br>Total liberdade para sua coleção.</p>
+                    <img src="assets/img/d75717a73a22ff8f9322180dd9c70005.webp" alt="Semijoia no bruto"
+                        class="comparison-card-image">
+                    <h3>Produção no Bruto</h3>
+                    <p>Você cria sua marca com acabamento exclusivo.<br>
+                        <strong>Lucro até 3x maior.</strong><br>
+                        Reposição garantida direto da fábrica.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: IDEAL PARA VOCÊ -->
+    <section class="ideal-section">
+        <div class="container">
+            <h2 class="section-title">O Bruto é para o seu negócio?</h2>
+
+            <div class="ideal-grid">
+                <div class="ideal-card yes">
+                    <h3>Ideal para você que:</h3>
+                    <ul>
+                        <li>Já tem loja ou revenda e quer aumentar a margem.</li>
+                        <li>Quer criar uma coleção com sua própria assinatura.</li>
+                        <li>Busca fornecedor com reposição constante.</li>
+                        <li>Tem parceiro de galvanoplastia (banho) ou quer indicação.</li>
+                    </ul>
+                </div>
+
+                <div class="ideal-card no">
+                    <h3>Não é para você se:</h3>
+                    <ul>
+                        <li>Busca apenas 1 ou 2 peças para uso pessoal.</li>
+                        <li>Quer a peça pronta (já banhada) imediatamente.</li>
+                        <li>Não tem interesse em gerenciar o processo de banho.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -720,47 +986,41 @@
     <section class="gallery">
         <div class="container">
             <div class="decoration-line"></div>
-            <h2 class="section-title">Nossos Produtos</h2>
+            <h2 class="section-title">Peças vendáveis o ano todo (atemporais)</h2>
+            <p style="text-align:center; color:var(--text-medium); margin-bottom:30px;">Mix pronto para lojista — do
+                básico ao destaque</p>
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="assets/img/72f424d5cfd6e4c620d3d90aeb5c10f7.webp"
-                        alt="Anéis Semijoia">
+                    <img src="assets/img/72f424d5cfd6e4c620d3d90aeb5c10f7.webp" alt="Anéis Semijoia">
                 </div>
 
                 <div class="gallery-item">
-                    <img src="assets/img/756a8aa793e9d3c7046f36325c05cf90.webp"
-                        alt="Colares">
+                    <img src="assets/img/756a8aa793e9d3c7046f36325c05cf90.webp" alt="Colares">
                 </div>
 
                 <div class="gallery-item">
-                    <img src="assets/img/1f497626dfd37115e52fc9b50e2fcf03.webp"
-                        alt="Brincos">
+                    <img src="assets/img/1f497626dfd37115e52fc9b50e2fcf03.webp" alt="Brincos">
                 </div>
 
                 <div class="gallery-item">
-                    <img src="assets/img/7d282ad66fe4181aae20f122779cc74b.webp"
-                        alt="Correntes">
+                    <img src="assets/img/7d282ad66fe4181aae20f122779cc74b.webp" alt="Correntes">
                 </div>
 
                 <div class="gallery-item">
-                    <img src="assets/img/ad006ab724c390e3d5e77af00592b508.webp"
-                        alt="Pingentes">
+                    <img src="assets/img/ad006ab724c390e3d5e77af00592b508.webp" alt="Pingentes">
                 </div>
 
                 <div class="gallery-item">
-                    <img src="assets/img/a30f04518d5142bd25e343abb711a57c.webp"
-                        alt="Conjunto">
+                    <img src="assets/img/a30f04518d5142bd25e343abb711a57c.webp" alt="Conjunto">
                 </div>
 
                 <div class="gallery-item">
-                    <img src="assets/img/2a13bf194a0ad5ee1fe9f1000fde72aa.webp"
-                        alt="Argolas">
+                    <img src="assets/img/2a13bf194a0ad5ee1fe9f1000fde72aa.webp" alt="Argolas">
                 </div>
 
                 <div class="gallery-item">
-                    <img src="assets/img/5b77fd0d2d15732ffac8cbab86765661.webp"
-                        alt="Mix de peças">
+                    <img src="assets/img/5b77fd0d2d15732ffac8cbab86765661.webp" alt="Mix de peças">
                 </div>
             </div>
         </div>
@@ -772,19 +1032,7 @@
             <h2 class="section-title">Por que comprar no bruto?</h2>
 
             <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 6v6l4 2" />
-                        </svg>
-                    </div>
-                    <div class="benefit-content">
-                        <h4>Você escolhe o banho</h4>
-                        <p>Ouro, prata, ródio... do seu jeito, com a qualidade que preferir.</p>
-                    </div>
-                </div>
-
+                <!-- Benefício 1: Margem (Lucro) -->
                 <div class="benefit-item">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -793,10 +1041,25 @@
                     </div>
                     <div class="benefit-content">
                         <h4>Margem até 3x maior</h4>
-                        <p>Paga menos na peça base, vende pelo mesmo preço do mercado.</p>
+                        <p>Paga menos na peça base, vende pelo mesmo preço do mercado. O lucro fica no seu bolso.</p>
                     </div>
                 </div>
 
+                <!-- Benefício 2: Coleção Exclusiva (Liberdade) -->
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
+                        </svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Sua Coleção, Sua Regra</h4>
+                        <p>Dê o acabamento que quiser: Ródio, Ouro 18k, Prata. Você define o padrão da sua marca.</p>
+                    </div>
+                </div>
+
+                <!-- Benefício 3: Reposição Garantida (Segurança) -->
                 <div class="benefit-item">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -805,11 +1068,12 @@
                         </svg>
                     </div>
                     <div class="benefit-content">
-                        <h4>Liberdade total</h4>
-                        <p>Monte sua coleção exclusiva, sem depender de estoque pronto.</p>
+                        <h4>Reposição Garantida</h4>
+                        <p>Somos indústria. O modelo que vendeu bem hoje estará disponível para reposição amanhã.</p>
                     </div>
                 </div>
 
+                <!-- Benefício 4: Qualidade (Produto) -->
                 <div class="benefit-item">
                     <div class="benefit-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -817,8 +1081,9 @@
                         </svg>
                     </div>
                     <div class="benefit-content">
-                        <h4>Qualidade de fábrica</h4>
-                        <p>Peças leves, bem acabadas e vendáveis o ano todo.</p>
+                        <h4>Indústria em Limeira</h4>
+                        <p>Latão de alta fusão e micro zircônia. Peças leves e resistentes, direto da capital da
+                            semijoia.</p>
                     </div>
                 </div>
             </div>
@@ -828,11 +1093,12 @@
     <section class="video-section">
         <div class="container">
             <div class="decoration-line"></div>
-            <h2 class="section-title">Veja nossa produção</h2>
+            <h2 class="section-title">Veja nossa produção: você compra da fonte</h2>
+            <p style="text-align:center; color:var(--white); margin-bottom:30px; opacity:0.9;">Transparência total:
+                acompanhe o processo de fabricação em Limeira/SP</p>
 
             <div class="video-placeholder">
-                <img src="assets/img/54fcbf9bffe22d87e1b67b4a19123462.webp"
-                    alt="Capa do Vídeo">
+                <img src="assets/img/54fcbf9bffe22d87e1b67b4a19123462.webp" alt="Capa do Vídeo">
                 <div class="video-play-btn">
                     <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"
                         style="width: 30px; height: 30px; color: white;">
@@ -846,68 +1112,186 @@
     <section class="credibility">
         <div class="container">
             <div class="decoration-line"></div>
-            <h2 class="section-title">Indústria própria em Limeira</h2>
-            <p style="text-align: center; opacity: 0.8; margin-bottom: 40px;">A capital das semijoias no Brasil</p>
+            <h2 class="section-title">Indústria em Limeira: padrão, reposição e confiança</h2>
+            <p style="text-align: center; opacity: 0.8; margin-bottom: 40px;">Segurança de comprar direto da capital da
+                semijoia</p>
 
             <div class="credibility-grid">
                 <div class="credibility-item">
-                    <h4>100% Própria</h4>
-                    <p>Produção totalmente interna, do início ao acabamento</p>
+                    <h4>100% Produção Própria</h4>
+                    <p>Controle total da qualidade, do molde ao acabamento final.</p>
                 </div>
 
                 <div class="credibility-item">
-                    <h4>Alta Qualidade</h4>
-                    <p>Latão, alta fusão e micro zircônia de primeira linha</p>
+                    <h4>Matéria-Prima Premium</h4>
+                    <p>Latão de alta fusão que garante leveza e resistência.</p>
                 </div>
 
                 <div class="credibility-item">
-                    <h4>Todo Brasil</h4>
-                    <p>Enviamos para lojistas de todas as regiões</p>
+                    <h4>Envio Todo Brasil</h4>
+                    <p>Logística ágil para lojistas de todas as regiões.</p>
                 </div>
             </div>
 
             <div class="factory-images">
                 <!-- Imagem 1: Fabricação de joias - produção interna -->
                 <div class="factory-image-item">
-                    <img src="assets/img/9f062afa9305c0ec55414c402ea9bbb7.webp"
-                        alt="Produção de Semijoias">
+                    <img src="assets/img/9f062afa9305c0ec55414c402ea9bbb7.webp" alt="Produção de Semijoias">
                 </div>
 
                 <!-- Imagem 2: Peças de joias sendo produzidas -->
                 <div class="factory-image-item">
-                    <img src="assets/img/0f7de0dc68705c25c498fbd8357494e8.webp"
-                        alt="Detalhes da Produção">
+                    <img src="assets/img/0f7de0dc68705c25c498fbd8357494e8.webp" alt="Detalhes da Produção">
                 </div>
 
                 <!-- Imagem 3: Enviamos para todo Brasil -->
                 <div class="factory-image-item">
-                    <img src="assets/img/4ca2b13d3b83ca66339307c2f1df8b4d.webp"
-                        alt="Enviamos para todo o Brasil">
+                    <img src="assets/img/4ca2b13d3b83ca66339307c2f1df8b4d.webp" alt="Enviamos para todo o Brasil">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="final-cta">
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
         <div class="container">
             <div class="decoration-line"></div>
-            <h2>Pronto para aumentar sua margem?</h2>
-            <p>Converse com nossa equipe e descubra como trabalhar com o bruto</p>
+            <h2 class="section-title">O que dizem nossos parceiros</h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">”</div>
+                    <p class="testimonial-text">"Abandonei o folheado pronto depois que conheci a Sophia. Compro no
+                        bruto, dou meu banho e minha margem dobrou. A peça sai muito mais em conta."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <span>Maria S. • Lojista em SP</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">”</div>
+                    <p class="testimonial-text">"A principal diferença pra mim é a reposição. Quando uma peça vende bem,
+                        eu ligo e eles têm no estoque ou fabricam rápido. Não perco venda."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <span>Roberto A. • Atacadista</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">”</div>
+                    <p class="testimonial-text">"As peças são leves e o acabamento do latão é impecável. Meu banhista
+                        sempre elogia a qualidade da fundição. Recomendo demais."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">C</div>
+                        <span>Carla M. • Marca Própria</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Dúvidas Frequentes</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Precisa ter CNPJ para comprar?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não! Atendemos tanto CPF quanto CNPJ. O importante é o pedido mínimo para atacado.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Qual o pedido mínimo?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>O mínimo é de apenas 15 peças no total. Você pode variar modelos e quantidades como quiser.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Vocês indicam onde dar o banho?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sim! Temos parceiros de confiança em Limeira para indicar, caso você ainda não tenha sua
+                            galvanoplastia.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Como funciona o envio?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Enviamos para todo o Brasil via Correios ou Transportadora. O frete é calculado no fechamento
+                            do pedido.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        As peças têm garantia?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Garantimos a qualidade do bruto (defeitos de fabricação). A garantia do banho será dada por
+                            você ou sua galvanoplastia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // FAQ Accordion Script
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <section class="final-cta">
+        <div class="final-cta-bg"></div>
+        <div class="container">
+            <span class="tagline-creative">Direto da Capital da Semijoia</span>
+            <h2 style="line-height: 1.1;">Ouro em<br>Estado Bruto.</h2>
+            <div class="decoration-line"></div>
+
+            <p>Leve sua marca para o Próximo Nível.<br>
+                Receba nosso catálogo completo e comece a lucrar mais.</p>
 
             <div class="offer-badges">
-                <span class="badge">✓ Pedido mínimo: 15 peças</span>
-                <span class="badge">✓ Envio para todo Brasil</span>
-                <span class="badge">✓ CPF e CNPJ</span>
-                <span class="badge">✓ Catálogo atualizado</span>
+                <span class="badge" style="background:rgba(255,255,255,0.1); color:white; border:1px solid #C9A86C;">✓
+                    Pedido Mínimo 15 Peças</span>
+                <span class="badge" style="background:rgba(255,255,255,0.1); color:white; border:1px solid #C9A86C;">✓
+                    Reposição Garantida</span>
+                <span class="badge" style="background:rgba(255,255,255,0.1); color:white; border:1px solid #C9A86C;">✓
+                    Indicação de Banho</span>
+                <span class="badge" style="background:rgba(255,255,255,0.1); color:white; border:1px solid #C9A86C;">✓
+                    Atacado CPF/CNPJ</span>
             </div>
 
-            <a href="https://wa.link/1nxmx6"
-                class="cta-button">
+            <a href="https://wa.link/1nxmx6" class="cta-button">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path
                         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                Quero Falar com um Consultor
+                ACIONAR CONSULTOR NO WHATSAPP
             </a>
     </section>
 
@@ -925,8 +1309,7 @@
     </footer>
 
     <div class="floating-cta">
-        <a href="https://wa.link/1nxmx6"
-            target="_blank" rel="noopener">
+        <a href="https://wa.link/1nxmx6" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24">
                 <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophia Brutos | Alta Fusão</title>
+
+    <!-- Fonts: Cinzel (Luxury Serif) + Lato (Clean Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-body: #F9F9F9;
+            --bg-white: #FFFFFF;
+            --text-main: #1C1C1C;
+            --text-light: #666666;
+            --gold: #C6A87C;
+            --gold-dark: #9E8256;
+            --black: #000000;
+
+            --spacing-unit: 80px;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Cinzel', serif;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--black);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- UTILS --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 5%;
+            /* Better side padding on tablet */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 42px;
+            background: var(--black);
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+            border: 1px solid var(--black);
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #333;
+            /* Slightly lighter black for hover */
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 1px solid var(--black);
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--black);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background: #fff;
+            color: #000;
+            border: 1px solid #fff;
+        }
+
+        .btn-white:hover {
+            background: transparent;
+            color: #fff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-2 {
+            margin-bottom: 20px;
+        }
+
+        .mb-4 {
+            margin-bottom: 40px;
+        }
+
+        .gold-acc {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--bg-white);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        header .container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: calc(100vh - 80px);
+            align-items: center;
+        }
+
+        .hero-text {
+            padding: 0 10%;
+        }
+
+        .hero-label {
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: 4.8rem;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 45px;
+            max-width: 500px;
+        }
+
+        .hero-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* --- FEATURES --- */
+        .features {
+            padding: 100px 0;
+            background: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feat-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feat-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .icon-box {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        /* --- SPLIT DARK --- */
+        .split-dark {
+            background: var(--black);
+            color: #fff;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .dark-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .dark-content {
+            padding: 80px 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .dark-content h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .dark-content p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .check-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .check-list li::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* --- GALLERY --- */
+        .gallery {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-img-wrap {
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .card-img-wrap img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .card:hover .card-img-wrap img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .card-sub {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        /* --- FAQ --- */
+        .faq {
+            padding: 80px 0;
+            background: var(--bg-white);
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-btn {
+            width: 100%;
+            padding: 25px 0;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.3s;
+            color: var(--text-light);
+        }
+
+        .faq-body p {
+            padding-bottom: 25px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #111;
+            color: #fff;
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .copy {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 12px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media(max-width: 900px) {
+
+            .hero,
+            .split-dark {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding: 60px 20px;
+                order: 2;
+            }
+
+            .hero-img {
+                height: 400px;
+                order: 1;
+            }
+
+            .features-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dark-content {
+                padding: 60px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero,
+            .split-dark {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+                text-align: center;
+            }
+
+            /* Reorder: Image top, Text bottom */
+            .hero-text {
+                padding: 60px 20px;
+                order: 2;
+            }
+
+            .hero-img {
+                height: 50vh;
+                order: 1;
+            }
+
+            /* Mobile Typography Adjustment */
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+
+            .hero-label {
+                font-size: 12px;
+                margin-bottom: 15px;
+            }
+
+            /* Grid Stacks */
+            .features-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .dark-content {
+                padding: 60px 20px;
+                text-align: center;
+            }
+
+            .dark-content h2 {
+                font-size: 2rem;
+            }
+
+            /* Center Check List on Mobile */
+            .check-list {
+                display: inline-block;
+                text-align: left;
+            }
+
+            /* Header Adjustment */
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 12px;
+            }
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">SOPHIA BRUTOS</a>
+            <nav class="nav-links">
+                <a href="#about">A Marca</a>
+                <a href="#collection">Coleção</a>
+                <a href="#faq">Dúvidas</a>
+            </nav>
+            <a href="https://wa.link/1nxmx6" class="btn">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-text">
+            <span class="hero-label">Atacado de Alta Fusão</span>
+            <h1>Ouro em <br><span class="gold-acc">Estado Bruto</span></h1>
+            <p>A base perfeita para quem quer criar, não apenas revender. Peças prontas para o banho da sua marca.</p>
+            <div style="margin-top: 30px;">
+                <a href="https://wa.link/1nxmx6" class="btn">Solicitar Catálogo</a>
+            </div>
+        </div>
+        <img src="assets/img/hero-main.jpg" alt="Joias em estado bruto" class="hero-img">
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feat-item">
+                    <div class="icon-box">✦</div>
+                    <h3>Liberdade Criativa</h3>
+                    <p>Você escolhe o banho e a identidade. Nós fornecemos a base de alta qualidade para sua criação.
+                    </p>
+                </div>
+                <div class="feat-item">
+                    <div class="icon-box">★</div>
+                    <h3>Lucro Real</h3>
+                    <p>Controle seus custos comprando no bruto. Maior margem para quem assina a própria coleção.</p>
+                </div>
+                <div class="feat-item">
+                    <div class="icon-box">∞</div>
+                    <h3>Linha Contínua</h3>
+                    <p>Modelos atemporais com reposição garantida. Sua vitrine nunca fica vazia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Visual -->
+    <section class="split-dark" id="about">
+        <img src="assets/img/manifesto-craftsman.jpg" alt="Ourives trabalhando" class="dark-img">
+        <div class="dark-content">
+            <h2>Indústria Própria</h2>
+            <p>Direto de Limeira/SP para a sua marca. Garantimos a qualidade da liga e do acabamento pré-banho. Sem
+                intermediários.</p>
+            <ul class="check-list">
+                <li>Pedido Mínimo: 15 peças</li>
+                <li>Venda para CPF e CNPJ</li>
+                <li>Envio para todo o Brasil</li>
+            </ul>
+            <div style="margin-top: 30px;">
+                <a href="https://wa.link/1nxmx6" class="btn btn-white">Falar com Consultor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="collection">
+        <div class="container">
+            <div class="section-header">
+                <h2>Curadoria 2026</h2>
+                <p style="color:var(--text-light)">Essenciais que vendem o ano todo.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- 1 -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="assets/img/gallery-chains.jpg" alt="Colares">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Correntaria</h3>
+                        <span class="card-sub">Base Essencial</span>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="assets/img/gallery-rings.jpg" alt="Anéis">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Anéis Bold</h3>
+                        <span class="card-sub">Alta Fusão</span>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="assets/img/hero-main.jpg" alt="Brincos">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Brincos Minimal</h3>
+                        <span class="card-sub">Giro Rápido</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="https://wa.link/1nxmx6" class="btn">Solicitar Catálogo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dúvidas Frequentes</h2>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-btn">Vocês dão banho nas peças? <span>+</span></button>
+                <div class="faq-body">
+                    <p>Não. Nosso foco é fornecer a peça no bruto com excelência. Porém, indicamos parceiros de
+                        confiança para você realizar o banho em Limeira.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">Qual o pedido mínimo? <span>+</span></button>
+                <div class="faq-body">
+                    <p>O mínimo é de 15 peças variadas. Ideal para quem está começando ou testando novos modelos.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">Posso comprar como Pessoa Física? <span>+</span></button>
+                <div class="faq-body">
+                    <p>Sim! Atendemos CPF e CNPJ com as mesmas condições de atacado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">SOPHIA BRUTOS</div>
+            <div class="footer-links">
+                <a href="https://wa.link/1nxmx6">WhatsApp</a>
+                <a href="#">Instagram</a>
+                <a href="#">Email</a>
+            </div>
+            <div class="copy">
+                &copy; 2026 Sophia Brutos. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const body = btn.nextElementSibling;
+                const isOpen = body.style.maxHeight;
+
+                document.querySelectorAll('.faq-body').forEach(b => b.style.maxHeight = null);
+
+                if (!isOpen) {
+                    body.style.maxHeight = body.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
