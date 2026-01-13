@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophia Brutos | Elegância e Lucratividade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #ffffff;
+            --text-main: #2c2c2c;
+            --accent-gold: #D4AF37;
+            /* Metallic Gold */
+            --accent-light: #f9f9f9;
+            --button-color: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            background-color: var(--button-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* COMPARISON SECTION */
+        .comparison {
+            padding: 100px 0;
+            background-color: var(--accent-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header span {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-top: 10px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border: 1px solid #eee;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card.highlight {
+            border: 2px solid var(--accent-gold);
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* BENEFITS */
+        .benefits {
+            padding: 100px 0;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* IMAGE GRID */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            height: 300px;
+        }
+
+        .grid-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .grid-img:hover {
+            filter: grayscale(0%);
+        }
+
+        /* VIDEO */
+        .video-section {
+            padding: 100px 0;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            max-width: 800px;
+            margin: 40px auto 0;
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            background: #333;
+        }
+
+        .video-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #f4f4f4;
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .comparison-grid,
+            .benefits-list,
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-grid {
+                height: auto;
+            }
+
+            .grid-img {
+                height: 250px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-content" class="container">
+            <h1>Sophia Brutos</h1>
+            <p>Elegância, qualidade e a oportunidade perfeita para o seu negócio.</p>
+            <a href="https://wa.me/5519999999999" class="cta-btn">
+                Falar com Consultor
+            </a>
+        </div>
+    </section>
+
+    <section class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <span>Comparativo</span>
+                <h2>Por que investir no Bruto?</h2>
+            </div>
+            <div class="comparison-grid">
+                <div class="card">
+                    <h3>Folheado</h3>
+                    <span class="price-tag">Margem Limitada</span>
+                    <p>Peças já banhadas, com custo mais alto e menor possibilidade de lucro para o revendedor.</p>
+                </div>
+                <div class="card highlight">
+                    <h3>Bruto (Fábrica)</h3>
+                    <span class="price-tag">Alta Lucratividade</span>
+                    <p>Compre direto da fonte. Personalize o banho e multiplique seu investimento em até 300%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="image-grid">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=400" class="grid-img"
+            alt="Joia 1">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=400" class="grid-img"
+            alt="Joia 2">
+        <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?q=80&w=400" class="grid-img"
+            alt="Joia 3">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=400" class="grid-img"
+            alt="Joia 4">
+    </div>
+
+    <section class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <span>Diferenciais</span>
+                <h2>Excelência em cada detalhe</h2>
+            </div>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="benefit-icon">✦</span>
+                    <h4>Garantia de Fábrica</h4>
+                    <p>Todas as peças passam por rigoroso controle de qualidade antes do envio.</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">★</span>
+                    <h4>Design Exclusivo</h4>
+                    <p>Modelos desenhados seguindo as últimas tendências da moda internacional.</p>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-icon">☀</span>
+                    <h4>Envio Seguro</h4>
+                    <p>Embalagem protegida e seguro total da carga para todo o Brasil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <h2>Conheça Nossa Produção</h2>
+            <p>Tecnologia e carinho em cada etapa</p>
+            <div class="video-wrapper">
+                <img src="https://s3minio.moiseskalebbe.com/imagensteste/Gemini_Generated_Image_omm4izomm4izomm4.png"
+                    alt="Video Cover">
+            </div>
+            <br>
+            <a href="https://wa.me/5519999999999" class="cta-btn">
+                Quero ser Revendedor
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <span class="footer-logo">Sophia Brutos</span>
+            <p>Rua Exemplo, 123 - Limeira, SP</p>
+            <p>&copy; 2025 Sophia Brutos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

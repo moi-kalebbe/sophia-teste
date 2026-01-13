@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophia Brutos - Modelos de Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 40px 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #B87B5E;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .card-button {
+            background-color: #333;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .card:hover .card-button {
+            background-color: #B87B5E;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Modelos de Landing Page - Sophia Brutos</h1>
+        <div class="grid">
+            <a href="model1.html" class="card">
+                <div class="card-number">01</div>
+                <div class="card-title">Modelo Elegante</div>
+                <div class="card-button">Ver Modelo</div>
+            </a>
+            <a href="model2.html" class="card">
+                <div class="card-number">02</div>
+                <div class="card-title">Modelo Moderno</div>
+                <div class="card-button">Ver Modelo</div>
+            </a>
+            <a href="model3.html" class="card">
+                <div class="card-number">03</div>
+                <div class="card-title">Modelo Clássico</div>
+                <div class="card-button">Ver Modelo</div>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
